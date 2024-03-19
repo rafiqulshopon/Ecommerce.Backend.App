@@ -23,7 +23,7 @@ export const register = async (req: Request, res: Response) => {
       },
     });
 
-    res.json(user);
+    res.json({ id: user.id, email: user.email, name: user.name });
   } catch (error) {
     console.error('Error registering user:', error);
     res.status(500).json({ error: 'Internal server error' });
